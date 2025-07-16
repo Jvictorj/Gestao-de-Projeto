@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 
-public class Controller {
+public class ConsultorController {
 
-    @GetMapping("/boasVindas")
-    public String boasVindas() {
-        return "Seja Bem-Vindo";
+    @GetMapping("/consultor")
+    public String EscolherConsultor() {
+        return "Escolha um Consultor";
     }
 }
