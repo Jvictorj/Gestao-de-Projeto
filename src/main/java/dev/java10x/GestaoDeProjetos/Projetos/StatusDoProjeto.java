@@ -1,4 +1,4 @@
-package dev.java10x.GestaoDeProjetos;
+package dev.java10x.GestaoDeProjetos.Projetos;
 
 public enum StatusDoProjeto {
     EM_PLANEJAMENTO,

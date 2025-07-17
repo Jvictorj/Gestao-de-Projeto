@@ -1,25 +1,32 @@
-package dev.java10x.GestaoDeProjetos;
+package dev.java10x.GestaoDeProjetos.Projetos;
 
+import dev.java10x.GestaoDeProjetos.Consultor.ConsultorModel;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
-@Table(name = "tb_cadastro_projeto")
+@Table(name = "tb_projeto")
 
-public class ProjetoModel {
+public class ProjetosModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String titulo;
     private String descricao;
     private LocalDate dataInicio;
     private LocalDate dataFimPrevista;
     private StatusDoProjeto status;
 
-    public ProjetoModel () { }
+    // Um projeto pode ter varios consultores
+    @OneToMany(mappedBy = "projetos")
+    private List<ConsultorModel> consultores;
 
-    public ProjetoModel (String titulo, String descricao, LocalDate dataInicio, LocalDate dataFimPrevista, StatusDoProjeto status) {
+    public ProjetosModel() { }
+
+    public ProjetosModel(String titulo, String descricao, LocalDate dataInicio, LocalDate dataFimPrevista, StatusDoProjeto status) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataInicio = dataInicio;

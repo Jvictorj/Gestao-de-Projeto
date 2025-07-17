@@ -1,4 +1,4 @@
-package dev.java10x.GestaoDeProjetos;
+package dev.java10x.GestaoDeProjetos.Projetos;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 
-public class ProjetoController {
+public class ProjetosController {
 
     @GetMapping ("/projeto")
     public String EscolherProjeto() {

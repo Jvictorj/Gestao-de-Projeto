@@ -1,4 +1,4 @@
-package dev.java10x.GestaoDeProjetos;
+package dev.java10x.GestaoDeProjetos.Consultor;
 
 public enum CargoDoConsultor {
     DESENVOLVEDOR_JUNIOR,

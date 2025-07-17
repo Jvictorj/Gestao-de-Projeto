@@ -1,22 +1,28 @@
-package dev.java10x.GestaoDeProjetos;
+package dev.java10x.GestaoDeProjetos.Consultor;
 
+import dev.java10x.GestaoDeProjetos.Projetos.ProjetosModel;
 import jakarta.persistence.*;
 
 @Entity
-@Table (name = "tb_cadastro_consultor")
+@Table (name = "tb_consultor")
 
 public class ConsultorModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String email;
     private int idade;
     private CargoDoConsultor cargo;
 
-    public ConsultorModel() {
-    }
+    //Varios consultores podem ter um mesmo projeto
+    @ManyToOne
+    @JoinColumn(name = "projetos_id") //chave estrangeira
+    private ProjetosModel projetos;
+
+    public ConsultorModel() { }
 
     public ConsultorModel(String nome, String email, int idade, CargoDoConsultor cargo) {
         this.nome = nome;
