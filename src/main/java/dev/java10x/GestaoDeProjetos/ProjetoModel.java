@@ -10,12 +10,12 @@ public class ProjetoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String titulo;
-    String descricao;
-    LocalDate dataInicio;
-    LocalDate dataFimPrevista;
-    StatusDoProjeto status;
+    private Long id;
+    private String titulo;
+    private String descricao;
+    private LocalDate dataInicio;
+    private LocalDate dataFimPrevista;
+    private StatusDoProjeto status;
 
     public ProjetoModel () { }
 

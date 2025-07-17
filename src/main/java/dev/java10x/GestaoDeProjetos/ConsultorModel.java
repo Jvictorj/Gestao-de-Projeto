@@ -9,12 +9,11 @@ public class ConsultorModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String nome;
-    String email;
-    int idade;
-    CargoDoConsultor cargo;
-
+    private Long id;
+    private String nome;
+    private String email;
+    private int idade;
+    private CargoDoConsultor cargo;
 
     public ConsultorModel() {
     }

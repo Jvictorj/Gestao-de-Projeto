@@ -13,4 +13,9 @@ public class ConsultorController {
     public String EscolherConsultor() {
         return "Escolha um Consultor";
     }
+
+    @GetMapping("/consultor/escolhido")
+    public String ConsultorEscolhido() {
+        return "Você escolheu o João como consultor";
+    }
 }
