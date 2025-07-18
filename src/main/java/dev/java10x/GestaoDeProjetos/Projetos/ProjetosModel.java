@@ -20,10 +20,19 @@ public class ProjetosModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "titulo")
     private String titulo;
+
+    @Column(name = "descricao")
     private String descricao;
+
+    @Column(name = "data_inicio")
     private LocalDate dataInicio;
+
+    @Column(name = "data_fim_prevista")
     private LocalDate dataFimPrevista;
+
+    @Column(name = "status")
     private StatusDoProjeto status;
 
     // Um projeto pode ter varios consultores

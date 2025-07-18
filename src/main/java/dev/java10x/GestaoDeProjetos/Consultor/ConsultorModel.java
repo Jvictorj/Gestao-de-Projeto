@@ -18,11 +18,16 @@ public class ConsultorModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "nome")
     private String nome;
 
-    @Column(unique = true)
+    @Column(name = "email", unique = true)
     private String email;
+
+    @Column(name = "idade")
     private int idade;
+
+    @Column(name = "cargo")
     private CargoDoConsultor cargo;
 
     //Varios consultores podem ter um mesmo projeto
