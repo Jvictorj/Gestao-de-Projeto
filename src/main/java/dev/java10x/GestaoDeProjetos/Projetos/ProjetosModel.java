@@ -32,6 +32,7 @@ public class ProjetosModel {
     @Column(name = "data_fim_prevista")
     private LocalDate dataFimPrevista;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private StatusDoProjeto status;
 

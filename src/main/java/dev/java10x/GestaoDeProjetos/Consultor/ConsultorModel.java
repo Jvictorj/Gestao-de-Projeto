@@ -27,6 +27,7 @@ public class ConsultorModel {
     @Column(name = "idade")
     private int idade;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "cargo")
     private CargoDoConsultor cargo;
 
