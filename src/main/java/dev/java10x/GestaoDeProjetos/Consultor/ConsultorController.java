@@ -1,21 +1,35 @@
 package dev.java10x.GestaoDeProjetos.Consultor;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/consultor")
 
 public class ConsultorController {
 
-    @GetMapping("/consultor")
-    public String EscolherConsultor() {
-        return "Escolha um Consultor";
+    @PostMapping("/criar")
+    public String criarConsultor () {
+        return "Cadastre um Consultor";
     }
 
-    @GetMapping("/consultor/escolhido")
-    public String ConsultorEscolhido() {
-        return "Você escolheu o João como consultor";
+    @GetMapping("/todos")
+    public String mostrarTodosOsConsultores () {
+        return "Mostrando todos os consultores";
     }
+
+    @GetMapping("/porId")
+    public String mostrarConsultorPorId () {
+        return "Mostrando Consultor por ID";
+    }
+
+    @PutMapping("/alterar")
+    public String alterarConsultorPorId () {
+        return "Alterar Consultor por Id";
+    }
+
+    @DeleteMapping("/excluir")
+    public String excluirConsulorPorId () {
+        return "Excluindo consultor por id";
+    }
+
 }

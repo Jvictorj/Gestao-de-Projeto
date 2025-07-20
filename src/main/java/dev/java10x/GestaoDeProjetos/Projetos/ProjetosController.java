@@ -1,18 +1,35 @@
 package dev.java10x.GestaoDeProjetos.Projetos;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/projeto")
 
 public class ProjetosController {
 
-    @GetMapping ("/projeto")
-    public String EscolherProjeto() {
-        return "Escolha um projeto";
+    @PostMapping("/criar")
+    public String criarProjeto() {
+        return "Criando um Projeto";
     }
 
+    @GetMapping ("/todos")
+    public String mostrarTodosOsProjetos() {
+        return "Mostra todos os projeto";
+    }
+
+    @GetMapping ("/porId")
+    public String mostrarProjetosPorId() {
+        return "Mostra projeto por id";
+    }
+
+    @PutMapping("/alterar")
+    public String alterarProjetoPorId() {
+        return "alterando o projeto por id";
+    }
+
+    @DeleteMapping("/deletar")
+    public String deletarProjetoPorId() {
+        return "deletar projeto por id";
+    }
 
 }
