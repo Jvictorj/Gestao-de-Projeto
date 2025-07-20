@@ -3,6 +3,7 @@ package dev.java10x.GestaoDeProjetos.Consultor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -15,8 +16,14 @@ public class ConsultorService {
         this.consultorRepository = consultorRepository;
     }
 
+
+
     public List<ConsultorModel> listarConsultor() {
         return consultorRepository.findAll();
     }
 
+    public ConsultorModel listarConsultorPorId(Long id) {
+        Optional<ConsultorModel> consultorPorId = consultorRepository.findById(id);
+        return consultorPorId.orElse(null);
+    }
 }

@@ -25,9 +25,9 @@ public class ConsultorController {
         return consultorService.listarConsultor();
     }
 
-    @GetMapping("/listarId")
-    public String listarConsultorPorId () {
-        return "Mostrando Consultor por ID";
+    @GetMapping("/listar/{id}")
+    public ConsultorModel listarConsultorPorId (@PathVariable Long id) {
+        return consultorService.listarConsultorPorId(id);
     }
 
     @PutMapping("/alterar")

@@ -2,10 +2,18 @@ package dev.java10x.GestaoDeProjetos.Projetos;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/projeto")
 
 public class ProjetosController {
+
+    private ProjetoService projetoService;
+
+    public ProjetosController(ProjetoService projetoService) {
+        this.projetoService = projetoService;
+    }
 
     @PostMapping("/criar")
     public String criarProjeto() {
@@ -13,13 +21,13 @@ public class ProjetosController {
     }
 
     @GetMapping ("/listar")
-    public String listarProjetos() {
-        return "Mostra todos os projeto";
+    public List<ProjetosModel> listarProjetos() {
+        return projetoService.listarProjeto();
     }
 
-    @GetMapping ("/listarId")
-    public String listarProjetosPorId() {
-        return "Mostra projeto por id";
+    @GetMapping ("/listar/{id}")
+    public ProjetosModel listarProjetosPorId(@PathVariable Long id) {
+        return projetoService.listarProjetoPorId(id);
     }
 
     @PutMapping("/alterar")
