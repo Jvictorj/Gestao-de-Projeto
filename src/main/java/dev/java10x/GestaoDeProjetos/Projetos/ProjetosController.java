@@ -12,13 +12,13 @@ public class ProjetosController {
         return "Criando um Projeto";
     }
 
-    @GetMapping ("/todos")
-    public String mostrarTodosOsProjetos() {
+    @GetMapping ("/listar")
+    public String listarProjetos() {
         return "Mostra todos os projeto";
     }
 
-    @GetMapping ("/porId")
-    public String mostrarProjetosPorId() {
+    @GetMapping ("/listarId")
+    public String listarProjetosPorId() {
         return "Mostra projeto por id";
     }
 

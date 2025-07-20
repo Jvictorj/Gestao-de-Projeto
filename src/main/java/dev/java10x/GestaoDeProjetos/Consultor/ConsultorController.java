@@ -12,13 +12,13 @@ public class ConsultorController {
         return "Cadastre um Consultor";
     }
 
-    @GetMapping("/todos")
-    public String mostrarTodosOsConsultores () {
+    @GetMapping("/listar")
+    public String listarConsultores () {
         return "Mostrando todos os consultores";
     }
 
-    @GetMapping("/porId")
-    public String mostrarConsultorPorId () {
+    @GetMapping("/listarId")
+    public String listarConsultorPorId () {
         return "Mostrando Consultor por ID";
     }
 
@@ -27,8 +27,8 @@ public class ConsultorController {
         return "Alterar Consultor por Id";
     }
 
-    @DeleteMapping("/excluir")
-    public String excluirConsulorPorId () {
+    @DeleteMapping("/deletar")
+    public String deletarConsulorPorId () {
         return "Excluindo consultor por id";
     }
 
