@@ -2,10 +2,18 @@ package dev.java10x.GestaoDeProjetos.Consultor;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/consultor")
 
 public class ConsultorController {
+
+    private ConsultorService consultorService;
+
+    public ConsultorController(ConsultorService consultorService) {
+        this.consultorService = consultorService;
+    }
 
     @PostMapping("/criar")
     public String criarConsultor () {
@@ -13,8 +21,8 @@ public class ConsultorController {
     }
 
     @GetMapping("/listar")
-    public String listarConsultores () {
-        return "Mostrando todos os consultores";
+    public List<ConsultorModel> listarConsultores () {
+        return consultorService.listarConsultor();
     }
 
     @GetMapping("/listarId")

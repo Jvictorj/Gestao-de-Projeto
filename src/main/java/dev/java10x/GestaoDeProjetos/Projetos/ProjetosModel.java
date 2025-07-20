@@ -1,5 +1,6 @@
 package dev.java10x.GestaoDeProjetos.Projetos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.GestaoDeProjetos.Consultor.ConsultorModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -38,6 +39,7 @@ public class ProjetosModel {
 
     // Um projeto pode ter varios consultores
     @OneToMany(mappedBy = "projetos")
+    @JsonIgnore
     private List<ConsultorModel> consultores;
 
 }
