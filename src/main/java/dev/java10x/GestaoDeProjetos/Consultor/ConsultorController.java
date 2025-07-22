@@ -16,8 +16,8 @@ public class ConsultorController {
     }
 
     @PostMapping("/criar")
-    public String criarConsultor () {
-        return "Cadastre um Consultor";
+    public ConsultorModel criarConsultor (@RequestBody ConsultorModel consultor) {
+        return consultorService.criarConsultor(consultor);
     }
 
     @GetMapping("/listar")

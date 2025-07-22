@@ -16,8 +16,6 @@ public class ConsultorService {
         this.consultorRepository = consultorRepository;
     }
 
-
-
     public List<ConsultorModel> listarConsultor() {
         return consultorRepository.findAll();
     }
@@ -25,5 +23,9 @@ public class ConsultorService {
     public ConsultorModel listarConsultorPorId(Long id) {
         Optional<ConsultorModel> consultorPorId = consultorRepository.findById(id);
         return consultorPorId.orElse(null);
+    }
+
+    public ConsultorModel criarConsultor(ConsultorModel consultor) {
+        return consultorRepository.save(consultor);
     }
 }
