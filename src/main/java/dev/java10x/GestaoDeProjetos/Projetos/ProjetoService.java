@@ -15,12 +15,22 @@ public class ProjetoService {
         this.projetoRepository = projetoRepository;
     }
 
-    public List<ProjetosModel> listarProjeto() {
+    public List<ProjetosModel> listarProjeto () {
         return projetoRepository.findAll();
     }
 
-    public ProjetosModel listarProjetoPorId(Long id) {
+    public ProjetosModel listarProjetoPorId (Long id) {
         Optional<ProjetosModel> projetoPorId = projetoRepository.findById(id);
         return projetoPorId.orElse(null);
     }
+
+    public ProjetosModel criarProjeto (ProjetosModel projeto) {
+        return projetoRepository.save(projeto);
+    }
+
+    public void deletarProjetoPorId (Long id) {
+        projetoRepository.deleteById(id);
+    }
+
+  
 }

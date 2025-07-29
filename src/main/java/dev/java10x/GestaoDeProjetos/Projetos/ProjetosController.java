@@ -16,8 +16,8 @@ public class ProjetosController {
     }
 
     @PostMapping("/criar")
-    public String criarProjeto() {
-        return "Criando um Projeto";
+    public ProjetosModel criarProjeto(ProjetosModel projeto) {
+        return projetoService.criarProjeto(projeto);
     }
 
     @GetMapping ("/listar")
@@ -30,14 +30,14 @@ public class ProjetosController {
         return projetoService.listarProjetoPorId(id);
     }
 
-    @PutMapping("/alterar")
-    public String alterarProjetoPorId() {
-        return "alterando o projeto por id";
-    }
+//    @PutMapping("/alterar/{id}")
+//    public ProjetosModel alterarProjetoPorId(@PathVariable Long id) {
+//        return ;
+//    }
 
-    @DeleteMapping("/deletar")
-    public String deletarProjetoPorId() {
-        return "deletar projeto por id";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarProjetoPorId(@PathVariable Long id) {
+        projetoService.deletarProjetoPorId(id);
     }
 
 }

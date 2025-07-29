@@ -30,14 +30,14 @@ public class ConsultorController {
         return consultorService.listarConsultorPorId(id);
     }
 
-    @PutMapping("/alterar")
-    public String alterarConsultorPorId () {
-        return "Alterar Consultor por Id";
+    @PutMapping("/alterar/{id}")
+    public ConsultorModel alterarConsultorPorId (@PathVariable Long id, @RequestBody ConsultorModel atualizarConsultor) {
+        return consultorService.atualizarConsultor(id, atualizarConsultor);
     }
 
-    @DeleteMapping("/deletar")
-    public String deletarConsulorPorId () {
-        return "Excluindo consultor por id";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarConsulorPorId (@PathVariable Long id) {
+        consultorService.deletarConsultorPorId(id);
     }
 
 }

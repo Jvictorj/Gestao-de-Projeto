@@ -28,4 +28,15 @@ public class ConsultorService {
     public ConsultorModel criarConsultor(ConsultorModel consultor) {
         return consultorRepository.save(consultor);
     }
+
+    public void deletarConsultorPorId(Long id) {
+        consultorRepository.deleteById(id);
+    }
+
+    public  ConsultorModel atualizarConsultor (Long id, ConsultorModel atualizarConsultor) {
+        if (consultorRepository.existsById(id))
+            atualizarConsultor.setId(id);
+            consultorRepository.save(atualizarConsultor);
+        return null;
+    }
 }
