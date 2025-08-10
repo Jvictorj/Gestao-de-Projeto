@@ -16,22 +16,22 @@ public class ConsultorController {
     }
 
     @PostMapping("/criar")
-    public ConsultorModel criarConsultor (@RequestBody ConsultorModel consultor) {
+    public ConsultorDTO criarConsultor (@RequestBody ConsultorDTO consultor) {
         return consultorService.criarConsultor(consultor);
     }
 
     @GetMapping("/listar")
-    public List<ConsultorModel> listarConsultores () {
+    public List<ConsultorDTO> listarConsultores () {
         return consultorService.listarConsultor();
     }
 
     @GetMapping("/listar/{id}")
-    public ConsultorModel listarConsultorPorId (@PathVariable Long id) {
+    public ConsultorDTO listarConsultorPorId (@PathVariable Long id) {
         return consultorService.listarConsultorPorId(id);
     }
 
     @PutMapping("/alterar/{id}")
-    public ConsultorModel alterarConsultorPorId (@PathVariable Long id, @RequestBody ConsultorModel atualizarConsultor) {
+    public ConsultorDTO alterarConsultorPorId (@PathVariable Long id, @RequestBody ConsultorDTO atualizarConsultor) {
         return consultorService.atualizarConsultor(id, atualizarConsultor);
     }
 
