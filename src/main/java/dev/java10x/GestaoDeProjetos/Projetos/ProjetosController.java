@@ -30,10 +30,10 @@ public class ProjetosController {
         return projetoService.listarProjetoPorId(id);
     }
 
-//    @PutMapping("/alterar/{id}")
-//    public ProjetosModel alterarProjetoPorId(@PathVariable Long id) {
-//        return ;
-//    }
+    @PutMapping("/alterar/{id}")
+    public ProjetosModel alterarProjetoPorId(@PathVariable Long id, @RequestBody ProjetosModel atualizarProjeto) {
+        return projetoService.atualizarProjeto(id, atualizarProjeto);
+    }
 
     @DeleteMapping("/deletar/{id}")
     public void deletarProjetoPorId(@PathVariable Long id) {

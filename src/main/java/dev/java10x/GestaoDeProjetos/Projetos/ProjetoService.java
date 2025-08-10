@@ -28,6 +28,12 @@ public class ProjetoService {
         return projetoRepository.save(projeto);
     }
 
+    public ProjetosModel atualizarProjeto (Long id, ProjetosModel atualizarProjeto) {
+        if (projetoRepository.existsById(id))
+            atualizarProjeto.setId(id);
+        projetoRepository.save(atualizarProjeto);
+    }
+
     public void deletarProjetoPorId (Long id) {
         projetoRepository.deleteById(id);
     }
