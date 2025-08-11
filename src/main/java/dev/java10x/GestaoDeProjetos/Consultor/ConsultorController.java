@@ -37,7 +37,7 @@ public class ConsultorController {
             return ResponseEntity.ok(listarConsultor);
         }   else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Consultor com ID: " + id + " Encontrado");
+                    .body("Consultor com ID: " + id + " não encontrado");
         }
     }
 
