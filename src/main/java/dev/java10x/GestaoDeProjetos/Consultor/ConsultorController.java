@@ -16,28 +16,28 @@ public class ConsultorController {
     }
 
     @PostMapping("/criar")
-    public String criarConsultor () {
-        return "Cadastre um Consultor";
+    public ConsultorDTO criarConsultor (@RequestBody ConsultorDTO consultor) {
+        return consultorService.criarConsultor(consultor);
     }
 
     @GetMapping("/listar")
-    public List<ConsultorModel> listarConsultores () {
+    public List<ConsultorDTO> listarConsultores () {
         return consultorService.listarConsultor();
     }
 
     @GetMapping("/listar/{id}")
-    public ConsultorModel listarConsultorPorId (@PathVariable Long id) {
+    public ConsultorDTO listarConsultorPorId (@PathVariable Long id) {
         return consultorService.listarConsultorPorId(id);
     }
 
-    @PutMapping("/alterar")
-    public String alterarConsultorPorId () {
-        return "Alterar Consultor por Id";
+    @PutMapping("/alterar/{id}")
+    public ConsultorDTO alterarConsultorPorId (@PathVariable Long id, @RequestBody ConsultorDTO atualizarConsultor) {
+        return consultorService.atualizarConsultor(id, atualizarConsultor);
     }
 
-    @DeleteMapping("/deletar")
-    public String deletarConsulorPorId () {
-        return "Excluindo consultor por id";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarConsulorPorId (@PathVariable Long id) {
+        consultorService.deletarConsultorPorId(id);
     }
 
 }

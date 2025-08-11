@@ -16,28 +16,28 @@ public class ProjetosController {
     }
 
     @PostMapping("/criar")
-    public String criarProjeto() {
-        return "Criando um Projeto";
+    public ProjetoDTO criarProjeto(ProjetoDTO projeto) {
+        return projetoService.criarProjeto(projeto);
     }
 
     @GetMapping ("/listar")
-    public List<ProjetosModel> listarProjetos() {
+    public List<ProjetoDTO> listarProjetos() {
         return projetoService.listarProjeto();
     }
 
     @GetMapping ("/listar/{id}")
-    public ProjetosModel listarProjetosPorId(@PathVariable Long id) {
+    public ProjetoDTO listarProjetosPorId(@PathVariable Long id) {
         return projetoService.listarProjetoPorId(id);
     }
 
-    @PutMapping("/alterar")
-    public String alterarProjetoPorId() {
-        return "alterando o projeto por id";
+    @PutMapping("/alterar/{id}")
+    public ProjetoDTO alterarProjetoPorId(@PathVariable Long id, @RequestBody ProjetoDTO atualizarProjeto) {
+        return projetoService.atualizarProjeto(id, atualizarProjeto);
     }
 
-    @DeleteMapping("/deletar")
-    public String deletarProjetoPorId() {
-        return "deletar projeto por id";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarProjetoPorId(@PathVariable Long id) {
+        projetoService.deletarProjetoPorId(id);
     }
 
 }

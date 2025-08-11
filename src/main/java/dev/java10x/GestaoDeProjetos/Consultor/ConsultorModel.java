@@ -31,6 +31,9 @@ public class ConsultorModel {
     @Column(name = "cargo")
     private CargoDoConsultor cargo;
 
+    @Column(name = "frase")
+    private String frase;
+
     //Varios consultores podem ter um mesmo projeto
     @ManyToOne
     @JoinColumn(name = "projetos_id") //chave estrangeira
