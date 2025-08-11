@@ -16,22 +16,22 @@ public class ProjetosController {
     }
 
     @PostMapping("/criar")
-    public ProjetosModel criarProjeto(ProjetosModel projeto) {
+    public ProjetoDTO criarProjeto(ProjetoDTO projeto) {
         return projetoService.criarProjeto(projeto);
     }
 
     @GetMapping ("/listar")
-    public List<ProjetosModel> listarProjetos() {
+    public List<ProjetoDTO> listarProjetos() {
         return projetoService.listarProjeto();
     }
 
     @GetMapping ("/listar/{id}")
-    public ProjetosModel listarProjetosPorId(@PathVariable Long id) {
+    public ProjetoDTO listarProjetosPorId(@PathVariable Long id) {
         return projetoService.listarProjetoPorId(id);
     }
 
     @PutMapping("/alterar/{id}")
-    public ProjetosModel alterarProjetoPorId(@PathVariable Long id, @RequestBody ProjetosModel atualizarProjeto) {
+    public ProjetoDTO alterarProjetoPorId(@PathVariable Long id, @RequestBody ProjetoDTO atualizarProjeto) {
         return projetoService.atualizarProjeto(id, atualizarProjeto);
     }
 

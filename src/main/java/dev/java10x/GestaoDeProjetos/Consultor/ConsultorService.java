@@ -20,8 +20,8 @@ public class ConsultorService {
     }
 
     public List<ConsultorDTO> listarConsultor() {
-        List<ConsultorModel> consultor = consultorRepository.findAll();
-        return consultor.stream()
+        List<ConsultorModel> listarConsultor = consultorRepository.findAll();
+        return listarConsultor.stream()
                 .map(consultorMapper::map)
                 .collect(Collectors.toList());
     }
